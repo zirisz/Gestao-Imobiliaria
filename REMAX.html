@@ -1,139 +1,211 @@
 <!DOCTYPE html>
-
-
-
-
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cabeçalho Horizontal</title>
-        <style>
-            header {
-                background-color: #0a498c; 
-                color: #090909;
-                padding: 10px;
-                text-align: center; 
-            }
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page REMAX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-            nav {
-                display: inline-block;
-            }
+        header {
+            background-color: #0a498c; 
+            color: #fff;
+            padding: 10px;
+            text-align: center; 
+        }
 
-            nav ul {
-                list-style-type: none;
-                padding: 0; /* Remover preenchimento padrão */
-                margin: 0; /* Remover margens padrão */
-            }
-    
-            nav ul li {
-                display: inline; 
-                margin-right: 30px; /* Espaçamento entre as opções */
-            }
-    
-            nav ul li a {
-                color: #fff; /* Cor do texto */
-                text-decoration: none; /* Remover sublinhado dos links */
-            }
-        </style>
-    </head>
-<body bgcolor="#e0e1e3">
+        nav {
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 120px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1, .content h2, .content p {
+            margin: 10px 0;
+        }
+
+        .search-region {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0;
+        }
+
+        .dropbtn {
+            background-color: #0a498c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .search-region:hover .dropdown-content,
+        .search-region:focus-within .dropdown-content {
+            display: block;
+        }
+
+        .properties {
+            padding: 20px;
+        }
+
+        .properties h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .properties table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .properties td {
+            padding: 10px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        .properties td img {
+            width: 300px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .properties td a {
+            display: block;
+            margin-bottom: 10px;
+            color: #0a498c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
     <header>
         <nav>
             <ul>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Exemplo de Lista de Opções</title>
-            </head>
-            <body>
-                <form>
-                    <li><a href="#">Região</a></li>    
-                    <select id="Região" name="Região">  
-                        <option value="#"> Selecione </option>
-                        <option value="Porto">Porto</option>
-                        <option value="Braga">Braga</option>
-                        <option value="Albufeira">Albufeira</option>
-                        <option value="Viana de Castelo">Viana de Castelo</option>
-                        <style>
-                        header{
-                            text-align: left; 
-                        }</style>
-                    </select>
-                
-                </form>
-            </body>
+                <li><a href="#">Região</a></li>
                 <li><a href="#">Ajuda</a></li>
                 <li><a href="#">Entrar</a></li>
             </ul>
         </nav>
     </header>
     
-<link rel="icon" type="image/png" href="Remax logo.png">
+    <div class="logo">
+        <img src="Remax logo.png" alt="REMAX Logo">
+    </div>
 
-<img src="Remax logo.png" width="100" height="120">
+    <div class="content">
+        <h1>REMAX</h1>
+        <h2>Bem-vindo ao site da REMAX!</h2>
+        <p>Aqui poderá encontrar todo o tipo de propriedades do seu interesse.</p>
 
+        <div class="search-region">
+            <button class="dropbtn">Selecione</button>
+            <div class="dropdown-content">
+                <a href="regiaoporto.html">Porto</a>
+                <a href="regiaobraga.html">Braga</a>
+                <a href="regiaoalbufeira.html">Albufeira</a>
+                <a href="ragiaovianadecastelo.html">Viana de Castelo</a>
+            </div>
+        </div>
+    </div>
 
-<h1>REMAX</h1>
+    <div class="properties">
+        <h2>Braga</h2>
+        <table>
+            <tr>
+                <td><a href="Moradia T3 Palmeira.html">Moradia T3, Palmeira</a></td>
+                <td><a href="Moradia T4 Nogueira.html">Moradia T4, Nogueira</a></td>
+                <td><a href="Moradia T4 Merelim.html">Moradia T4, Merelim</a></td>
+            </tr>
+            <tr>
+                <td><img src="palmeira foto 1.png" alt="Moradia T3, Palmeira"></td>
+                <td><img src="nogueira foto 1.jpg" alt="Moradia T4, Nogueira"></td>
+                <td><img src="merelim foto 1.jpg" alt="Moradia T4, Merelim"></td>
+            </tr>
+        </table>
 
-<h2>Bem-vindo ao site da REMAX!</h2>
+        <h2>Porto</h2>
+        <table>
+            <tr>
+                <td><a href="Moradia T3 Penafiel.html">Moradia T3, Penafiel</a></td>
+                <td><a href="Moradia T2 Povoa.html">Moradia T2, Póvoa</a></td>
+                <td><a href="Moradia T2 Trofa.html">Moradia T2, Trofa</a></td>
+            </tr>
+            <tr>
+                <td><img src="penafiel 1.jpg" alt="Moradia T3, Penafiel"></td>
+                <td><img src="Povoa foto 4.jpg" alt="Moradia T2, Póvoa"></td>
+                <td><img src="Moradia T2 Trofa foto 1.jpg" alt="Moradia T2, Trofa"></td>
+            </tr>
+        </table>
+    </div>
 
-<p>Aqui poderá encontrar todo o tipo de propriedades do seu interesse.</p>
+    <script>
+        function redirecionar() {
+            const selectElement = document.getElementById('regiao');
+            const selectedValue = selectElement.value;
 
-
-<br></br>
-
-
-<h3>Pesquisar por Região:</h3>
-
-<h2>Braga</h2>
-
-
-<table>
-    <tr>
-        <td><a href="Moradia T3 Palmeira.html">Moradia T3, Palmeira</a><br></td>
-        <td></td>
-        <td><a href="Moradia T4 Nogueira.html">Moradia T4, Nogueira</a></td>
-        <td></td>
-        <td><a href="Moradia T4 Merelim.html">Moradia T4, Merelim</a></td>
-    </tr>
-    <tr>
-        <td><img src="palmeira foto 1.png" width="300" height="150"></td>
-        <td></td>
-        <td><img src="nogueira foto 1.jpg" width="300" height="150"></td>
-        <td></td>
-        <td><img src="merelim foto 1.jpg" width="300" height="150"></td>
-    </tr>
-    
-</table>
-
-<br><br>
-<h2>Porto</h2>
-<br><br>
-<table>
-    <tr>
-        <td><a href="Moradia T3 Penafiel.html">Moradia T3, Penafiel</a><br></td>
-        <td></td>
-        <td><a href="Moradia T2 Povoa.html">Moradia T2, Povoa</a><br></td>
-        <td></td>
-        <td><a href="Moradia T2 Trofa.html">Moradia T2, Trofa</a></td>
-        </tr>
-        <tr>
-        <td><img src="penafiel 1.jpg" width="300" height="150"></td>
-<td></td>
-<td><img src="Povoa foto 4.jpg" width="300" height="150"></td>
-<td></td>
-<td><img src="Moradia T2 Trofa foto 1.jpg" width="300" height="150"></td>
-</tr>
-
-</table>
-
-<br><br><br>
-
-
-
-
-
-
+            if (selectedValue && selectedValue !== "#") {
+                window.location.href = selectedValue;
+            }
+        }
+    </script>
+</body>
 </html>
-
 
