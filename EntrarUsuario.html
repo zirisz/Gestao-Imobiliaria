@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registro de Usuário</title>
+    <title>Entrar na Conta</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
@@ -74,7 +74,6 @@
             font-weight: bold;
         }
 
-        .form-container input[type="text"],
         .form-container input[type="email"],
         .form-container input[type="password"] {
             width: calc(100% - 22px);
@@ -106,7 +105,9 @@
         <nav>
             <ul>
                 <li><a href="#">Ajuda</a></li>
-                <li><a href="EntrarUsuario.html">Voltar</a></li>
+                <li><a href="REMAX.html">Voltar</a></li>
+                <li><a href="Registar.html">Registar</a></li>
+
             </ul>
         </nav>
     </header>
@@ -117,29 +118,43 @@
         </div>
 
         <div class="form-container">
-            <h2>Registro de Usuário</h2>
-            <form action="Registar.php" method="post">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                
-                <label for="numero">Número Tel:</label>
-                <input type="text" id="numero" name="numero" required>
-                
+            <h2>Entrar na Conta</h2>
+            <form id="loginForm">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
+                
                 <label for="senha">Senha:</label>
                 <input type="password" id="senha" name="senha" required>
                 
-                <input type="submit" value="Registrar">
+                <input type="submit" value="Entrar">
             </form>
         </div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Captura os valores dos campos
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            // Aqui você pode adicionar a lógica para validar os dados ou enviar para o servidor
+            // Vou apenas exibir os dados no console por enquanto
+            console.log('Email:', email);
+            console.log('Senha:', senha);
+
+            // Exemplo de validação simples
+            if (email === "usuario@exemplo.com" && senha === "senha123") {
+                alert("Login bem-sucedido!");
+                // Redirecionar para outra página após o login bem-sucedido
+                href="EntrarUsuario.html";
+                window.location.href = "pagina-principal.html";
+            } else {
+                alert("Email ou senha incorretos. Tente novamente.");
+            }
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
 
