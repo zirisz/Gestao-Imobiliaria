@@ -1,119 +1,325 @@
 <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamaçães, Braga - Moradia T4</title>
+    <link rel="icon" type="image/png" href="Remax logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+        }
 
-<html>
+        header {
+            background-color: #0a498c; 
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
+        nav {
+            display: inline-block;
+        }
 
-<link rel="icon" type="image/png" href="Remax logo.png">
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
 
-<body bgcolor="lightgrey">
+        nav ul li {
+            display: inline; 
+            margin-right: 30px;
+        }
 
-<img src="remax logo.png" width="100" height="120">
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
 
-<br></br>
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
 
-<h1><u>Lamaçães, Braga</u></h3> <h2>- Moradia T4</h2>
+        .logo img {
+            width: 100px;
+            height: 120px;
+        }
 
-    <tr>
-        <td><img src="nogueira foto 1.jpg" width="300" height="150"></td>
-        <td></td>
-        <td><img src="nogueira foto 2.jpg" width="300" height="150"></td>
-    </tr>
-    <tr>
-        <td><img src="nogueira foto 3.jpg" width="300" height="150"></td>
-        <td></td>
-        <td><img src="nogueira foto 4.jpg" width="300" height="150"></td>
-    </tr>
-    <tr>
-        <td><img src="nogueira foto 5.jpg" width="300" height="150"></td>
-        <td></td>
-        <td><img src="nogueira foto 6.jpg" width="300" height="150"></td>
-    </tr>
-    <tr>
-        <td><img src="nogueira foto 7.jpg" width="300" height="150"></td>
-        <td></td>
-        <td><img src="nogueira foto 8.jpg" width="300" height="150"></td>
-    </tr>
-</table>
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
 
+        .content h1, .content h2, .content p {
+            margin: 10px 0;
+        }
 
-<h1>435 000€</h1> <br>
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-<h3>Descrição:</h3>
-<p>Moradia T4 de Gaveto em Lamaçães, Braga.</p>
+        .carousel-slide {
+            display: none;
+        }
 
-<p>Localização privilegiada, no coração de Lamaçães, Braga, esta moradia T4 transformada em T3 de gaveto oferece uma posição estratégica, combinando a tranquilidade residencial com a proximidade conveniente de serviços, escolas e áreas de lazer.</p>
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+        }
 
-<p>Com um design moderno e apelativo, esta moradia destaca-se pela sua <b>arquitetura contemporânea</b> que harmoniza perfeitamente com o ambiente circundante.</p>
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+        }
 
-<p>Desfrute de ambientes amplos e luminosos, proporcionando uma sensação de amplitude e conforto em cada canto da casa.</p><br></br>
+        .prev {
+            left: 10px;
+        }
 
-<h3>Características principais:</h3>
+        .next {
+            right: 10px;
+        }
 
-<p><b>1º Andar</b></p>
-<ul>
-    <li>Suíte com armários embutidos, WC completo com base de duche e varanda privativa;</li>
-    <li>2 Quartos, um com armários embutidos e varanda;</li>
-    <li>WC completo com base duche.</li>
-</ul>
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 50%;
+        }
 
-<p><b>R/Chão</b></p>
-<ul>
-    <li>Hall de entrada;</li>
-    <li>Sala de jantar e estar com varanda;</li>
-    <li>Cozinha totalmente mobilada e equipada com placa a gás, forno, exaustor, microondas, frigorifico, máquina da loiça;</li>
-    <li>WC serviço.</li>
-</ul>
+        .properties {
+            padding: 20px;
+        }
 
-<p><b>Piso Inferior</b></p>
-<ul>
-    <li>Lavandaria;</li>
-    <li>Arrecadação;</li>
-    <li>Garagem fechada para 3 viaturas.</li><br><br>
-</ul>
+        .properties h2 {
+            text-align: left;
+            margin-top: 0;
+        }
 
+        .agent-contact img {
+            width: 170px;
+            height: 270px;
+            border-radius: 5px;
+        }
 
+        form {
+            text-align: left;
+            max-width: 400px;
+            margin: auto;
+        }
 
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
 
-<h2>Contactar Agente</h2>
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
 
-<img src="agente braga.png" width="170" height="270">
-<b>Diogo Moreira</b><br><br>
+        button {
+            background-color: #0a498c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
 
-<form>
-	<label>Nome</label>
-	<input name="Nome"><br>
-	<label>Portugal +351</label>
-	<input name="Portugal +351"><br>
-	<label>Endereço de email</label>
-	<input name="Endereço de email"><br>
-	<label>Mensagem</label>
-	<input name="Mensagem"><br><br>
-	<button>Enviar Mensagem</button><br><br>
+        table.simulator {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: grey;
+        }
 
-<h2>Simulador de Crédito</h2>
+        table.simulator tr {
+            background-color: beige;
+        }
 
-<table bgcolor="grey">
-	<tr bgcolor="beige">
-		<td>Valor do Imóvel</td>
-		<td></td>
-		<td>435 000€</td>
-	</tr>
-	<tr bgcolor="beige">
-		<td>Valor de Entrada</td>
-		<td>43 500€</td>
-		<td>10%</td>
-	</tr>
-	<tr bgcolor="beige">
-		<td>Prazo de Amortização</td>
-		<td></td>
-		<td>30 anos</td>
-	</tr>
-</table><br>
+        table.simulator td {
+            padding: 10px;
+            text-align: center;
+        }
 
-<h3>Prestação Mensal: 2142,52€</h3>
+        .return-link {
+            text-align: center;
+            margin-top: 20px;
+        }
 
-<br></br><br></br>
-<a href="REMAX.html"> << voltar <a>
+        .return-link a {
+            color: #0a498c;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Remax logo.png" alt="Remax Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Propriedades</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="content">
+        <h1><u>Lamaçães, Braga</u></h1>
+        <h2>- Moradia T4</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="nogueira foto 1.jpg" alt="Nogueira Foto 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 2.jpg" alt="Nogueira Foto 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 3.jpg" alt="Nogueira Foto 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 4.jpg" alt="Nogueira Foto 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 5.jpg" alt="Nogueira Foto 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 6.jpg" alt="Nogueira Foto 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 7.jpg" alt="Nogueira Foto 7">
+            </div>
+            <div class="carousel-slide">
+                <img src="nogueira foto 8.jpg" alt="Nogueira Foto 8">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <h1>435 000€</h1>
+        
+        <h3>Descrição:</h3>
+        <p>Moradia T4 de Gaveto em Lamaçães, Braga.</p>
+        <p>Localização privilegiada, no coração de Lamaçães, Braga, esta moradia T4 transformada em T3 de gaveto oferece uma posição estratégica, combinando a tranquilidade residencial com a proximidade conveniente de serviços, escolas e áreas de lazer.</p>
+        <p>Com um design moderno e apelativo, esta moradia destaca-se pela sua <b>arquitetura contemporânea</b> que harmoniza perfeitamente com o ambiente circundante.</p>
+        <p>Desfrute de ambientes amplos e luminosos, proporcionando uma sensação de amplitude e conforto em cada canto da casa.</p><br>
+
+        <h3>Características principais:</h3>
+        <p><b>1º Andar</b></p>
+        <ul>
+            <li>Suíte com armários embutidos, WC completo com base de duche e varanda privativa;</li>
+            <li>2 Quartos, um com armários embutidos e varanda;</li>
+            <li>WC completo com base duche.</li>
+        </ul>
+
+        <p><b>R/Chão</b></p>
+        <ul>
+            <li>Hall de entrada;</li>
+            <li>Sala de jantar e estar com varanda;</li>
+            <li>Cozinha totalmente mobilada e equipada com placa a gás, forno, exaustor, microondas, frigorífico, máquina da loiça;</li>
+            <li>WC serviço.</li>
+        </ul>
+
+        <p><b>Piso Inferior</b></p>
+        <ul>
+            <li>Lavandaria;</li>
+            <li>Arrecadação;</li>
+            <li>Garagem fechada para 3 viaturas.</li><br><br>
+        </ul>
+    </div>
+    
+    <div class="agent-contact">
+        <h2>Contactar Agente</h2>
+        <img src="agente braga.png" alt="Agente Braga">
+        <b>Diogo Moreira</b><br><br>
+
+        <form>
+            <label>Nome</label>
+            <input name="Nome">
+            <label>Portugal +351</label>
+            <input name="Portugal +351">
+            <label>Endereço de email</label>
+            <input name="Endereço de email">
+            <label>Mensagem</label>
+            <input name="Mensagem"><br><br>
+            <button>Enviar Mensagem</button><br><br>
+        </form>
+    </div>
+    
+    <div class="credit-simulator">
+        <h2>Simulador de Crédito</h2>
+        <table class="simulator">
+            <tr>
+                <td>Valor do Imóvel</td>
+                <td></td>
+                <td>435 000€</td>
+            </tr>
+            <tr>
+                <td>Valor de Entrada</td>
+                <td>43 500€</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Prazo de Amortização</td>
+                <td></td>
+                <td>30 anos</td>
+            </tr>
+        </table><br>
+
+        <h3>Prestação Mensal: 2142,52€</h3>
+    </div>
+
+    <div class="return-link">
+        <a href="REMAX.html"><< voltar</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
