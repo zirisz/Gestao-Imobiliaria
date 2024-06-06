@@ -5,10 +5,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
     $numero = $_POST["numero"];
     $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $senha = $_POST["senha"]; 
     
     // Conecta-se ao banco de dados (substitua os valores conforme necessário)
-    $servername = "localhost";
+    $servername = "localhost/htdocs/arquivos php/Registar.php";
     $username = "seu_usuario";
     $password = "sua_senha";
     $dbname = "seu_banco_de_dados";
