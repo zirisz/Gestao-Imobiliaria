@@ -20,17 +20,18 @@
         }
 
         nav {
-            display: flex;
-            justify-content: center;
-            margin: 10px 0;
+            display: inline-block;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            gap: 30px;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 30px;
         }
 
         nav ul li a {
@@ -71,7 +72,6 @@
             font-size: 16px;
             border: none;
             cursor: pointer;
-            border-radius: 5px;
         }
 
         .dropdown-content {
@@ -81,8 +81,6 @@
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            border-radius: 5px;
-            overflow: hidden;
         }
 
         .dropdown-content a {
@@ -103,7 +101,6 @@
 
         .properties {
             padding: 20px;
-            text-align: center;
         }
 
         .properties h2 {
@@ -124,9 +121,8 @@
         }
 
         .properties td img {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
+            width: 300px;
+            height: 150px;
             object-fit: cover;
             border-radius: 5px;
         }
@@ -137,17 +133,6 @@
             color: #0a498c;
             text-decoration: none;
             font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .properties table, .properties tr, .properties td {
-                display: block;
-                width: 100%;
-            }
-
-            .properties td {
-                margin-bottom: 20px;
-            }
         }
     </style>
 </head>
@@ -167,7 +152,7 @@
 
     <div class="content">
         <h1>REMAX</h1>
-        <h2>Porto</h2>
+        <h2>Braga</h2>
 
         <div class="search-region">
             <button class="dropbtn">Selecione a Região</button>
@@ -185,19 +170,20 @@
         <table>
             <tr>
                 <td>
-                    <a href="Moradia T3 Penafiel.html">Moradia T3, Penafiel</a>
-                    <img src="penafiel 1.jpg" alt="Moradia T3, Penafiel">
+                    <a href="Moradia T3 Palmeira.html">Moradia T3, Palmeira</a>
+                    <img src="palmeira foto 1.png" alt="Moradia T3, Palmeira">
                 </td>
                 <td>
-                    <a href="Moradia T2 Povoa.html">Moradia T2, Póvoa</a>
-                    <img src="Povoa foto 4.jpg" alt="Moradia T2, Póvoa">
+                    <a href="Moradia T4 Nogueira.html">Moradia T4, Nogueira</a>
+                    <img src="nogueira foto 1.jpg" alt="Moradia T4, Nogueira">
                 </td>
                 <td>
-                    <a href="Moradia T2 Trofa.html">Moradia T2, Trofa</a>
-                    <img src="Moradia T2 Trofa foto 1.jpg" alt="Moradia T2, Trofa">
+                    <a href="Moradia T4 Merelim.html">Moradia T4, Merelim</a>
+                    <img src="merelim foto 1.jpg" alt="Moradia T4, Merelim">
                 </td>
             </tr>
         </table>
     </div>
 </body>
 </html>
+

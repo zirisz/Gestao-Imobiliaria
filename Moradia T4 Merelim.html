@@ -1,97 +1,314 @@
 <!DOCTYPE html>
-
-<html>
-
-
+<html lang="pt">
 <head>
-	<link rel="icon" type="image/png" href="Remax logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merelim (São Pedro) e Frossos - Moradia T4</title>
+    <link rel="icon" type="image/png" href="Remax logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+        }
+
+        header {
+            background-color: #0a498c; 
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 120px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1, .content h2, .content p {
+            margin: 10px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 50%;
+        }
+
+        .properties {
+            padding: 20px;
+        }
+
+        .properties h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .agent-contact img {
+            width: 170px;
+            height: 270px;
+            border-radius: 5px;
+        }
+
+        form {
+            text-align: left;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0a498c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        table.simulator {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: grey;
+        }
+
+        table.simulator tr {
+            background-color: beige;
+        }
+
+        table.simulator td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .return-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .return-link a {
+            color: #0a498c;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
 </head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Remax logo.png" alt="Remax Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Propriedades</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <div class="content">
+        <h1><u>Merelim (São Pedro) e Frossos</u></h1>
+        <h2>- Moradia T4</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="merelim foto 2.jpg" alt="Merelim Foto 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 3.jpg" alt="Merelim Foto 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 4.jpg" alt="Merelim Foto 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 5.jpg" alt="Merelim Foto 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 6.jpg" alt="Merelim Foto 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 7.jpg" alt="Merelim Foto 7">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 8.jpg" alt="Merelim Foto 8">
+            </div>
+            <div class="carousel-slide">
+                <img src="merelim foto 9.jpg" alt="Merelim Foto 9">
+            </div>
 
-<body bgcolor="lightgrey">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
 
-<img src="Remax logo.png" width="100" height="120">
+        <h1>299 000€</h1>
+        
+        <h3>Descrição:</h3>
+        <p>Moradia T4 para venda.</p>
+        <p>Localizada a apenas 10 minutos do centro de Braga.</p><br>
 
-<br></br>
+        <h3>Características do Imóvel:</h3>
+        <ul>
+            <li>R/C com hall de entrada amplo, casa de banho, cozinha em open space com a sala com acesso ao jardim;</li>
+            <li>Através do hall de entrada temos acesso ao piso -1 onde temos a garagem e 1 casa de banho;</li>
+            <li>No 1º Andar dispomos de 4 quartos, 1 casa de banho, 1 suíte com casa de banho e varanda.</li>
+        </ul>
 
-<h1><u>Merelim (São Pedro) e Frossos</u></h3> <h2>- Moradia T4</h2>
+        <h3>Extras:</h3>
+        <ol>
+            <li>Ar condicionado</li>
+            <li>Recuperador de calor</li>
+            <li>Aquecimento central</li>
+            <li>Armários embutidos</li><br>
+        </ol>
+    </div>
+    
+    <div class="agent-contact">
+        <h2>Contactar Agente</h2>
+        <img src="agente braga.png" alt="Agente Braga">
+        <b>Diogo Moreira</b><br><br>
 
-<img src="merelim foto 2.jpg" width="300" height="150">
-<img src="merelim foto 3.jpg" width="300" height="150">
-<img src="merelim foto 4.jpg" width="300" height="150">
-<img src="merelim foto 5.jpg" width="300" height="150"><br>
-<img src="merelim foto 6.jpg" width="300" height="150">
-<img src="merelim foto 7.jpg" width="300" height="150">
-<img src="merelim foto 8.jpg" width="300" height="150">
-<img src="merelim foto 9.jpg" width="300" height="150">
+        <form>
+            <label>Nome</label>
+            <input name="Nome">
+            <label>Portugal +351</label>
+            <input name="Portugal +351">
+            <label>Endereço de email</label>
+            <input name="Endereço de email">
+            <label>Mensagem</label>
+            <input name="Mensagem"><br><br>
+            <button>Enviar Mensagem</button><br><br>
+        </form>
+    </div>
+    
+    <div class="credit-simulator">
+        <h2>Simulador de Crédito</h2>
+        <table class="simulator">
+            <tr>
+                <td>Valor do Imóvel</td>
+                <td></td>
+                <td>299 000€</td>
+            </tr>
+            <tr>
+                <td>Valor de Entrada</td>
+                <td>29 900€</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Prazo de Amortização</td>
+                <td></td>
+                <td>30 anos</td>
+            </tr>
+        </table>
+        <h3>Prestação Mensal: 1472,67€</h3>
+    </div>
 
+    <div class="return-link">
+        <a href="REMAX.html"><< voltar</a>
+    </div>
 
+    <script>
+        let slideIndex = 0;
+        showSlides();
 
-<h1>299 000€</h1> <br>
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
 
-<h3>Descrição:</h3>
-<p>Moradia T4 para venda.</p>
-
-<p>Localizada a apenas 10 minutos do centro de Braga.</p><br>
-
-
-<h3>Características do Imóvel:</h3>
-
-<ul>
-    <li>R/C com hall de entrada amplo, casa de banho, cozinha em open space com a sala com acesso ao jardim;</li>
-    <li>Através do hall de entrada temos acesso ao piso -1 onde temos a garagem e 1 casa de banho;</li>
-    <li>No 1º Andar dispomos de 4 quartos, 1 casa de banho, 1 suíte com casa de banho e varanda.</li>
-</ul>
-
-<h3>Extras:</h3>
-
-<ol>
-    <li>Ar condicionado</li>
-    <li>Recuperador de calor</li>
-    <li>Aquecimento central</li>
-    <li>Armários embutidos</li><br>
-</ol>
-
-<h2>Contactar Agente</h2>
-
-<img src="agente albufeira.png" width="170" height="270">
-<b>Pedro Fernandes</b><br><br>
-
-<form>
-	<label>Nome</label>
-	<input name="Nome"><br>
-	<label>Portugal +351</label>
-	<input name="Portugal +351"><br>
-	<label>Endereço de email</label>
-	<input name="Endereço de email"><br>
-	<label>Mensagem</label>
-	<input name="Mensagem"><br><br>
-	<button>Enviar Mensagem</button><br><br>
-
-<h2>Simulador de Crédito</h2>
-
-<table bgcolor="grey">
-	<tr bgcolor="beige">
-		<td>Valor do Imóvel</td>
-		<td></td>
-		<td>299 000€</td>
-	</tr>
-	<tr bgcolor="beige">
-		<td>Valor de Entrada</td>
-		<td>29 900€</td>
-		<td>10%</td>
-	</tr>
-	<tr bgcolor="beige">
-		<td>Prazo de Amortização</td>
-		<td></td>
-		<td>30 anos</td>
-	</tr>
-</table><br>
-
-<h3>Prestação Mensal: 1472,67€</h3>
-
-<br></br><br></br>
-<a href="REMAX.html"> << voltar <a>
-
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
 </body>
 </html>
