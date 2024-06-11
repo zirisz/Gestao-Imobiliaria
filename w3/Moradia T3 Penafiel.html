@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUN NATURE Residências - Moradia T3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgrey;
+        }
+
+        header {
+            background-color: #0a498c; 
+            color: #fff;
+            padding: 10px;
+            text-align: center; 
+        }
+
+        nav {
+            display: inline-block;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline; 
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .logo img {
+            width: 100px;
+            height: 120px;
+        }
+
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content h1, .content h2, .content p {
+            margin: 10px 0;
+        }
+
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .carousel-slide {
+            display: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 50%;
+        }
+
+        .properties {
+            padding: 20px;
+        }
+
+        .properties h2 {
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .agent-contact img {
+            width: 170px;
+            height: 270px;
+            border-radius: 5px;
+        }
+
+        form {
+            text-align: left;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0a498c;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        table.simulator {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: grey;
+        }
+
+        table.simulator tr {
+            background-color: beige;
+        }
+
+        table.simulator td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .return-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .return-link a {
+            color: #0a498c;
+            text-decoration: none;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Remax logo.png" alt="Remax Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Propriedades</a></li>
+                <li><a href="#">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1><u>SUN NATURE Residências</u></h1>
+        <h2>- Moradia T3</h2>
+        
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="penafiel 1.jpg" alt="Penafiel Foto 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 2.jpg" alt="Penafiel Foto 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 3.jpg" alt="Penafiel Foto 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 4.jpg" alt="Penafiel Foto 4">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 5.jpg" alt="Penafiel Foto 5">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 6.jpg" alt="Penafiel Foto 6">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 7.jpg" alt="Penafiel Foto 7">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 8.jpg" alt="Penafiel Foto 8">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 9.jpg" alt="Penafiel Foto 9">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 10.jpg" alt="Penafiel Foto 10">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 11.jpg" alt="Penafiel Foto 11">
+            </div>
+            <div class="carousel-slide">
+                <img src="penafiel 12.jpg" alt="Penafiel Foto 12">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <h1>800 000€</h1>
+        
+        <h3>Descrição:</h3>
+        <p>Empreendimento SUN NATURE Residências.</p>
+        <p>Fantástica moradia T3, com jardim e piscina em Penafiel. Moradia de 4 frentes, em bom estado de conservação, com jardim exterior e piscina para inesquecíveis momentos de lazer, em família ou com amigos. Localiza-se numa zona habitacional tranquila.</p>
+        <p>Nesta moradia irá encontrar divisões amplas, com excelente exposição solar, distribuída por 2 pisos.</p>
+        
+        <p>No piso 0:</p>
+        <ul>
+            <li>Ampla sala de estar;</li>
+            <li>Cozinha equipada, com 2 exaustores, placa indução de 79 cm (de referir que o wok e o grelhador são embutidos), gaveta de aquecimento, micro-ondas, frigorífico duplo, máquina e frigorifico encastrados;</li>
+            <li>Lavandaria com máquina de lavar e máquina de secar e espaço interior para secar roupa;</li>
+            <li>Escritório;</li>
+            <li>Casa de banho completa;</li>
+            <li>Sala de jantar;</li>
+            <li>Jardim de inverno;</li>
+            <li>Acesso à zona exterior onde se encontra uma generosa área de jardim, piscina e uma box para 2 viaturas.</li>
+        </ul>
+        
+        <p>No piso 1:</p>
+        <ul>
+            <li>3 suites com armários em madeira ripada e interior de madeira sucupira tipo closet. Todas com acesso a varandas.</li>
+        </ul>
+        
+        <p>Principais características:</p>
+        <ul>
+            <li>Vidros duplos;</li>
+            <li>Caixilharia Sapa;</li>
+            <li>Vídeo porteiro;</li>
+            <li>Alarme Prossegur;</li>
+            <li>Pré-instalação para câmaras de vigilância;</li>
+            <li>Ar condicionado Mitsubishi em todas as divisões;</li>
+            <li>Cozinha J. Dias equipada com eletrodomésticos AEG e bancadas Corian;</li>
+            <li>Casas de banho com pastilha Bissaza, Agatha Ruiz de La Prada, Andy Warhol e bancadas Corian;</li>
+            <li>Peças sanitárias Cielo;</li>
+            <li>Interrutores com design Siza Vieira;</li>
+            <li>Sistema de som em todas as divisões;</li>
+            <li>Tomadas embutidas;</li>
+            <li>Portas e armários lacados;</li>
+            <li>Portas de correr embutidas;</li>
+            <li>Estores brisa solar elétricos;</li>
+            <li>Chão em madeira de sucupira em todas as divisões inclusive nas casas de banho, exceto hall que é em retificado de mármore, e escadas e garagem que são em pavimento epoxy;</li>
+            <li>Lareira de dupla face para escritório e sala de estar;</li>
+            <li>Piscina de Sal;</li>
+            <li>Sistema de rega automática;</li>
+            <li>Painéis solares com bomba de calor;</li>
+            <li>Capoto com pintura de cor para proteção;</li>
+            <li>Arquiteto Pedro Correia.</li>
+        </ul>
+        
+        <p>Pontos de interesse:</p>
+        <ul>
+            <li>Perto de saída da autoestrada (Paredes e Penafiel), com acesso rápido as saídas norte e sul de Penafiel;</li>
+            <li>Acesso rápido à central de autocarros e estação de comboios;</li>
+            <li>A 3 minutos do centro da cidade;</li>
+            <li>Perto de Hospital Público e Privado;</li>
+            <li>Na zona da Quinta da Aveleda;</li>
+            <li>Perto de todo o tipo de comércio e serviços.</li>
+        </ul>
+        
+        <p>Nota: Existe possibilidade de aquisição conjunta do terreno com a moradia confinante. Poderá consultar essa informação no ID 124851188-20</p>
+        
+        <p>Trata-se de um imóvel excecional que aguarda a sua visita!</p>
+    </div>
+    
+    <div class="agent-contact">
+        <h2>Contactar Agente</h2>
+        <img src="agente porto.png" alt="Agente Porto">
+        <b>Rafael Baptista</b><br><br>
+
+        <form>
+            <label>Nome</label>
+            <input name="Nome">
+            <label>Portugal +351</label>
+            <input name="Portugal +351">
+            <label>Endereço de email</label>
+            <input name="Endereço de email">
+            <label>Mensagem</label>
+            <input name="Mensagem"><br><br>
+            <button>Enviar Mensagem</button><br><br>
+        </form>
+    </div>
+    
+    <div class="credit-simulator">
+        <h2>Simulador de Crédito</h2>
+        <table class="simulator">
+            <tr>
+                <td>Valor do Imóvel</td>
+                <td></td>
+                <td>475 000€</td>
+            </tr>
+            <tr>
+                <td>Valor de Entrada</td>
+                <td>47 500€</td>
+                <td>10%</td>
+            </tr>
+            <tr>
+                <td>Prazo de Amortização</td>
+                <td></td>
+                <td>30 anos</td>
+            </tr>
+        </table>
+        <h3>Prestação Mensal: 2339,53€</h3>
+    </div>
+
+    <div class="return-link">
+        <a href="REMAX.html"><< voltar</a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 2000);
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
+</body>
+</html>
