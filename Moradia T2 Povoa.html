@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beiriz e Argivai, Povoa de Varzim - Moradia T2</title>
-    <link rel="icon" type="image/png" href="Remax logo.png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,15 +59,58 @@
             margin: 10px 0;
         }
 
-        .property-photos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .property-photos img {
-            margin: 5px;
+        .carousel-slide {
+            display: none;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%;
+            user-select: none;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.8);
+            border-radius: 50%;
+        }
+
+        .properties {
+            padding: 20px;
+        }
+
+        .properties h2 {
+            text-align: left;
+            margin-top: 0;
         }
 
         .agent-contact img {
@@ -151,11 +193,21 @@
         <h1><u>Beiriz e Argivai, Povoa de Varzim</u></h1>
         <h2>- Moradia T2</h2>
         
-        <div class="property-photos">
-            <img src="Povoa foto 1.jpg" width="300" height="150">
-            <img src="Povoa foto 2.jpg" width="300" height="150">
-            <img src="Povoa foto 3.jpg" width="300" height="150">
-            <img src="Povoa foto 4.jpg" width="300" height="150">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="Povoa foto 1.jpg" alt="Povoa Foto 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="Povoa foto 2.jpg" alt="Povoa Foto 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="Povoa foto 3.jpg" alt="Povoa Foto 3">
+            </div>
+            <div class="carousel-slide">
+                <img src="Povoa foto 4.jpg" alt="Povoa Foto 4">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
         <h1>179 000€</h1>
@@ -186,27 +238,11 @@
     </div>
     
     <div class="credit-simulator">
-        <h2>Simulador de Crédito</h2>
-        <table class="simulator">
-            <tr>
-                <td>Valor do Imóvel</td>
-                <td></td>
-                <td>179 000€</td>
-           
-            </tr>
-            <tr>
-                <td>Valor de Entrada</td>
-                <td>17 900€</td>
-                <td>10%</td>
-            </tr>
-            <tr>
-                <td>Prazo de Amortização</td>
-                <td></td>
-                <td>30 anos</td>
-            </tr>
-        </table>
-
-        <h3>Prestação Mensal: 881,63€</h3>
+        <h3>Calcular Prestação Mensal</h3>
+        <label for="months">Número de meses:</label>
+        <input type="number" id="months" name="months" min="1">
+        <button onclick="calculateMonthlyPayment()">Calcular</button>
+        <h3 id="monthlyPayment"></h3>
     </div>
 
     <div class="return-link">
@@ -232,6 +268,20 @@
             slideIndex += n - 1;
             showSlides();
         }
+
+        function calculateMonthlyPayment() {
+            const totalAmount = 179000;
+            const months = document.getElementById('months').value;
+            if (months <= 0) {
+                document.getElementById('monthlyPayment').innerText = "Por favor, insira um número válido de meses.";
+                return;
+            }
+            const monthlyPayment = (totalAmount / months).toFixed(2);
+            document.getElementById('monthlyPayment').innerText = `Prestação Mensal: ${monthlyPayment}€`;
+        }
     </script>
 </body>
 </html>
+
+
+
